@@ -10,10 +10,12 @@ namespace BMI_Calculator
     {
         static void Main(string[] args)
         {
+            //requests user input for height and weight
             Console.Write("Please input height: ");
             int height = int.Parse(Console.ReadLine());
             Console.Write("Please input weight: ");
             int weight = int.Parse(Console.ReadLine());
+            //pass user input to BMI() and WL BMI()'s return string
             Console.WriteLine(BMI(height, weight));
             Console.ReadKey();
         }
@@ -21,27 +23,13 @@ namespace BMI_Calculator
         static string BMI(double height, double weight)
         {
             double bmi = (weight * 703) / (height * height);
-            if (bmi < 16)
-            {
-                return $"Your BMI is {bmi}. You must gain weight.";
-            }
-            else if (bmi <= 16 && bmi > 18.5)
-            {
-                return $"Your BMI is {bmi}. You should gain weight.";
-            }
-            else if (bmi <= 18.5 && bmi > 25)
-            {
-                return $"Your BMI is {bmi}.  Maintain your weight.";
-            }
-            else if (bmi <= 25 && bmi > 30)
-            {
-                return $"Your BMI is {bmi}. You should lose weight.";
-            }
-            else if (bmi <= 30)
-            {
-                return $"Your BMI is {bmi}. You must lose weight.";
-            }
-            else return "Please input height and weight.";
+            //if/else series uses BMI to return a string based on the range in which BMI falls
+            if (bmi < 16) return $"Your BMI is {bmi}. You must gain weight.";
+            else if (bmi >= 16 && bmi < 18.5) return $"Your BMI is {bmi}. You should gain weight.";
+            else if (bmi >= 18.5 && bmi < 25) return $"Your BMI is {bmi}.  Maintain your weight.";
+            else if (bmi >= 25 && bmi < 30) return $"Your BMI is {bmi}. You should lose weight.";
+            else if (bmi >= 30) return $"Your BMI is {bmi}. You must lose weight.";
+            else return "Please input height in inches and weight in pounds.";
         }
     }
 }
