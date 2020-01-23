@@ -22,6 +22,7 @@ namespace BMI_Calculator
 
         static string BMI(double height, double weight)
         {
+            //calculate BMI using height and weight
             double bmi = (weight * 703) / (height * height);
             //if/else series uses BMI to return a string based on the range in which BMI falls
             if (bmi < 16) return $"Your BMI is {bmi}. You must gain weight.";
