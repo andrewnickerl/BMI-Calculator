@@ -25,11 +25,10 @@ namespace BMI_Calculator
             double bmi = (weight * 703) / (height * height);
             //if/else series uses BMI to return a string based on the range in which BMI falls
             if (bmi < 16) return $"Your BMI is {bmi}. You must gain weight.";
-            else if (bmi >= 16 && bmi < 18.5) return $"Your BMI is {bmi}. You should gain weight.";
-            else if (bmi >= 18.5 && bmi < 25) return $"Your BMI is {bmi}.  Maintain your weight.";
-            else if (bmi >= 25 && bmi < 30) return $"Your BMI is {bmi}. You should lose weight.";
-            else if (bmi >= 30) return $"Your BMI is {bmi}. You must lose weight.";
-            else return "Please input height in inches and weight in pounds.";
+            else if (bmi < 18.5) return $"Your BMI is {bmi}. You should gain weight.";
+            else if (bmi < 25) return $"Your BMI is {bmi}.  Maintain your weight.";
+            else if (bmi < 30) return $"Your BMI is {bmi}. You should lose weight.";
+            else return $"Your BMI is {bmi}. You must lose weight.";
         }
     }
 }
